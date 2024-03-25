@@ -8,15 +8,17 @@ import React from 'react';
 import { BREAKPOINTS } from '@core/theme/vars';
 
 const WidgetSliderCarousel = (props) => {
-    const { storeConfig } = props;
+    const {
+        storeConfig = {},
+    } = props;
 
-    if (storeConfig && storeConfig !== '') {
+    if (storeConfig && storeConfig.welcome) {
         return (
             <div>
                 <div className={cx('slider-container', 'h-[45px]',
                     'overflow-hidden', 'text-center', 'p-[8px_25%]')}
                 >
-                    {storeConfig}
+                    {storeConfig.welcome}
                 </div>
                 <style jsx>
                     {`
